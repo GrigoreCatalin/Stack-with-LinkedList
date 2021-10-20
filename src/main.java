@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+
 public class main {
 
     public static void checkTwoList(MyDoubleLinkedList list1) {
@@ -9,21 +11,21 @@ public class main {
         list3.add(121);
         list3.add(21);
 
-        System.out.println(list1.addAll(3, list3));
+        System.out.println(list1.addAll(2, list3));
         System.out.println();
         list1.display();
         System.out.println();
         list3.display();
         System.out.println();
 
-        System.out.println("Size List 1 ->" + list1.getSize());
-        System.out.println("Size List 2 ->" + list3.getSize());
-
-        System.out.println("Head List 1 ->" + list1.getHead());
-        System.out.println("Head List 2 ->" + list3.getHead());
-
-        System.out.println("Tail List 1 ->" + list1.getTail());
-        System.out.println("Tail List 2 ->" + list3.getTail());
+//        System.out.println("Size List 1 ->" + list1.getSize());
+//        System.out.println("Size List 2 ->" + list3.getSize());
+//
+//        System.out.println("Head List 1 ->" + list1.getHead());
+//        System.out.println("Head List 2 ->" + list3.getHead());
+//
+//        System.out.println("Tail List 1 ->" + list1.getTail());
+//        System.out.println("Tail List 2 ->" + list3.getTail());
     }
 
     public static void main(String[] args) {
@@ -83,5 +85,8 @@ public class main {
         stack.display();
 
 
+
     }
+
+
 }

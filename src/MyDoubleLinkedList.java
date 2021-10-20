@@ -249,6 +249,10 @@ public class MyDoubleLinkedList<E> {
     }
 
     public boolean addAll(int index, MyDoubleLinkedList c) {
+        if (c == null){
+            return false;
+        }
+
         if (checkIndex(index)) {
             this.head = null;
             return false;
@@ -257,11 +261,8 @@ public class MyDoubleLinkedList<E> {
         MyDoubleLinkedList copylist = new MyDoubleLinkedList(c);
         DoubleLinkedListNode it = this.head;
 
-        if (c == null){
-            return false;
-        }
 
-        if (index == 0) { //cazul in care lista este indtrodusa pe pozitia 0
+        if (index == 0) { //cazul in care lista este introdusa pe pozitia 0
             this.head = copylist.head;
             copylist.tail.next(it);
             it.previous(copylist.tail);
@@ -269,20 +270,14 @@ public class MyDoubleLinkedList<E> {
             return true;
         }
 
-        int counter = 0;
+        int iterator1 = 0;
 
-        while (counter < index - 1) {
+        while (iterator1 < index - 1) {
             it = it.next;
-            counter++;
+            iterator1++;
         }
 
-        int counter2 = this.size - 1;
-        DoubleLinkedListNode it2 = this.tail;
-
-        while (counter2 > index) {
-            it2 = it2.previous;
-            counter2--;
-        }
+        DoubleLinkedListNode it2 = it.next;
 
         it.next(copylist.head);
         copylist.head.previous(it);
@@ -293,11 +288,11 @@ public class MyDoubleLinkedList<E> {
         return true;
     }
 
-    public int[] toArray() {
-        int[] array = new int[this.size];
+    public Object [] toArray() {
+        Object [] array = new Object[this.size];
         DoubleLinkedListNode it = this.head;
         for (int i = 0; i < array.length; i++) {
-            array[i] = (int) it.value;
+            array[i] = (Object) it.value;
             it = it.next;
             System.out.print(array[i] + " ");
         }
